@@ -12,3 +12,4 @@ def union(*ar): # 튜블 파라미터
 #여러가지 경우
 print(union("HAM","SPAM"))
 print(union("HAM","SPAM","EGG"))
+#주석 추가 
