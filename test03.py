@@ -14,7 +14,12 @@ html = '''
                     <span class = 'store'> 스마트컴퓨터 </span>
                     <a href = 'http://www.naver.com' > 홈페이지 </a>
                 </p>
+
+                <p id='notebook3' class='devices'>
+                    <span class = 'name'> 맥북에어m2 test </span>
+                </p>
             </div>
+            
             <div class = 'after'>
                 <p id='notebook2' class='devices'>
                     <span class ='name'> 맥북프로 </span>
@@ -49,8 +54,8 @@ soup = BeautifulSoup(html, 'html.parser')
 
 #이때 맥북프로를 제외하고 맥북에어만 찾기 위해 맥북에어가 포함된 
 #부모 태그 정보를 추가한다. 
-tags_notebook1 = soup.select('#notebook1 > span.name')
-print(tags_notebook1) 
+# tags_notebook1 = soup.select('#notebook1 > span.name')
+# print(tags_notebook1) 
 
 # #태그 위치로 위치 찾기2 
 # #결과는 동일하지만 첫번째 코드는 상위태그1(div.sale)
@@ -58,10 +63,13 @@ print(tags_notebook1)
 # #상위태그2(#notebook1) 바로 아래에 있는 태그(span.name)을 모두 찾았다. 
 # #두번째 코드는 상위태그(div.sale) 바로 아래에 있는 태그뿐 아니라 
 # #몇 단계 아래의 태그 중에서 태그 정보(span.name)를 모두 찾았다. 
+
 tags_notebook2 = soup.select('div.sale > #notebook1 > span.name')
 tags_notebook3 = soup.select('div.sale span.name')
+# tags_notebook4 = soup.select('span.name')
 print(tags_notebook2)
 print(tags_notebook3)
+# print(tags_notebook4)
 
 # #태그 그룹에서 하나의 태그만 선택
 # tags = soup.select('span.name')
